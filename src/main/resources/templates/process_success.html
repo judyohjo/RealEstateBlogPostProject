@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+    <title> 성공 </title>
+</head>
+
+<body>
+<div class="messageContainer">
+    <div class="popup">
+    	<img src="/image/ok.png" class="responsive">
+        <h3> 성공적으로 저장되었습니다!</h3>
+        <a th:href="@{/all_news_post}"><button type="button">부동산 소식</button></a>
+        <a th:href="@{/all_board_post}"><button type="button"> 자유게시판</button></a>
+    </div>
+ </div>
+     
+</body>
+</html>

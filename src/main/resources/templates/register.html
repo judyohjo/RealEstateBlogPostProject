@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+    <title>가입하기</title>
+</head>
+<body>
+
+<div class="messageContainer">
+	<div class="popup">
+		<label onclick="history.go(-1)" for="show" class="close-btn" title="close"><i class="fa fa-fw fa-times"></i></label>
+        <br>
+        <div class="text">회원가입</div>
+            <form th:action="@{/process_register}" th:object="${Account}" method="post">
+            <div class="data">
+                <input type="text" th:field="*{name}" class="form-control" placeholder="이름"
+                            required minlength="2" maxlength="20"/>
+            </div>
+            
+            <div class="data">
+                <input type="text" th:field="*{username}" class="form-control" placeholder="아이디"
+                            required minlength="6" maxlength="10"/>
+            </div>
+            
+            <div class="data">
+                <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호"
+                            required minlength="6" maxlength="16"/>
+            </div>
+            
+            <div class="data">
+                <input type="password" th:field="*{confirmPassword}" class="form-control" placeholder="비밀번호 재입력"
+                            required minlength="6" maxlength="16"/> 
+            </div>
+            
+            <div class="data">
+                <input type="email" th:field="*{email}" class="form-control" placeholder="이메일" required />
+            </div>
+            
+            <div class="data">
+                <input type="text" th:field="*{contact}" class="form-control" placeholder="연락처" required />
+            </div>
+            
+            <div class="btn">
+                 <div class="inner"></div>
+                 <button type="submit"> 가입 </button>
+            </div>
+
+           </form>
+            
+    </div>
+</div>
+
+</body>
+</html>

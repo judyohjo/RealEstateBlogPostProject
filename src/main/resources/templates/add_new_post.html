@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+    <title>새글쓰기</title>
+</head>
+<body>
+<div class="messageContainer">
+	<div class="newform">
+		<label onclick="history.go(-1)" for="show" class="close-btn" title="close"><i class="fa fa-fw fa-times"></i></label>
+        <br>
+        <div class="text">글쓰기</div>
+        <form th:action="@{/process_post}" th:object="${Post}" method="post" enctype="multipart/form-data">
+			<div class="data">
+                <input type="text" th:field="*{title}" class="form-control" placeholder="제목"
+                             minlength="2" maxlength="100" required/>
+            </div>
+            
+            <div class="data">
+                <select class="select-menu" name="category" th:field="*{postCategory}" required>            		
+            		<option th:each="categoryOption : ${T(com.realestateblog.model.Category).values()}" th:value="${categoryOption}" th:text="${categoryOption.description}"></option>
+            		
+            	</select>
+            </div>
+          
+            <div align="left">
+                <input id="image" type="file" name="image" placeholder="이미지 첨부" accept="image/png, image/jpeg, image/jpg"/> 
+            </div>
+            
+            <div class="data">
+            <textarea th:field="*{content}" class="form-control" placeholder="내용"
+                             minlength="6" maxlength="10000" rows="5"></textarea>
+                <!-- <textarea th:field="*{content}" class="form-control" placeholder="내용"
+                             minlength="6" maxlength="10000" rows="4" cols="50"></textarea>-->
+            </div>
+
+            <div class="btns">
+                 <div class="innerbtn"></div>
+                 <button type="submit">저장</button>   
+            </div>
+            
+		</form>
+	</div>
+</div>
+
+<script>
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("keyup", e =>{
+  textarea.style.height = "63px";
+  let scHeight = e.target.scrollHeight;
+  textarea.style.height = `${scHeight}px`;
+});
+
+</script>
+</body>
+</html>

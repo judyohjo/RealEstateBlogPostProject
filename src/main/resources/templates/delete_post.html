@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+    <title> 삭제 </title>
+</head>
+
+<body>
+<div class="messageContainer">
+	<div class="popup">
+	<img src="/image/delete.png" class="responsive">
+		<label onclick="history.go(-1)" for="show" class="close-btn" title="close"><i class="fa fa-fw fa-times"></i></label>
+        <br>
+        <div class="text"> 포스트 삭제 </div>
+        <h3 class="redError" th:if="${errMsg}" th:text="${errMsg}"></h3>
+        <br>
+		<form th:if="${allowDelete}" th:action="@{/all_news_post/{postId}/delete(postId=${post.id})}" method="POST">        
+		<h5> 이 글을 정말 삭제하시겠습니까? </h5>
+		
+		<div class="btn">
+            <div class="inner"></div>
+            <button type="submit"> 예 </button>
+        </div>
+
+        </form>
+        
+    </div>
+ </div>
+     
+</body>
+</html>

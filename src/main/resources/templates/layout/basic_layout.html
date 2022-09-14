@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:fragment="site-head">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/img/small-logo.png"/>
+    <script src="/js/jquery-3.1.0.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <meta th:include="this :: head" th:remove="tag"/>
+</head>
+
+<body>
+<header th:fragment="site-header">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container-fluid">
+
+            <div id="navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li sec:authorize="isAuthenticated()"><a href="/add_new_post">Create Post</a></li>
+                    <li sec:authorize="isAuthenticated()"><a href="/all_news_post">Your Posts</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li sec:authorize="isAnonymous()">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li sec:authorize="isAnonymous()">
+                        <a href="/register">Register</a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <a href="/accounts">
+                            <span th:text="${#authentication.getName()}"></span>
+                        </a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()">
+                        <form method="post" action="/logout">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <input class="btn btn-primary navbar-btn" type="submit" value="Logout"/>
+                        </form>
+                     </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+</header>
+
+<h1>Welcome</h1>
+<p> 일번지 부동산 </p>
+
+<footer th:fragment="site-footer">
+    Copyright &copy; 2022 일번지부동산
+    <script src="/js/blog-scripts.js"></script>
+</footer>
+</body>
+
+</html>-->

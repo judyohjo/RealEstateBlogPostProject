@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="~{/layout/head :: headFragment}">
+	<title> 부동산 소개 </title>
+</head>
+
+<body>
+
+<!-- Header and Navigation bar -->
+<div th:replace="~{/layout/header :: headerFragment}"></div>
+<div class="content">
+	<div class="container">
+	<br>
+		<div align="left">
+        	<h1><i class="fa fa-fw fa-map-marker" style="font-size:48px;"></i>부동산 소개 </h1>
+     	</div>
+     	<hr>
+     	<p>안녕하세요 고양동 일번지 부동산입니다.</p>
+		<p>저희 고양동 일번지 부동산은 경기도 고양시 덕양구 고양동 고양일고등학교 바로 앞 사거리에 위치해 있습니다.</p>
+		<br/>
+		<img border="0" src="/image/realestate.jpeg" alt="realestate" class="responsive">
+		<br/><br/>
+		<p><i class="fa fa-fw fa-map-marker"></i>차편을 이용해 오시는 경우 경기도 고양시 덕양구 고양동 243 삼라마이다스 101호를 네비에 입력하시면 되고</p>
+		<p><i class="fa fa-fw fa-map-marker"></i>버스를 이용해 오시는 경우:</p>
+		<p>&nbsp;<i class="fa fa-fw fa-check"></i>&nbsp;삼송역 053 033 333 774 790 버스를 타고 고양동 현대아파트 정류장에서 하차 하시면 됩니다</p>
+		<p>&nbsp;<i class="fa fa-fw fa-check"></i>&nbsp;연신내역 774 버스를 타고 고양동 현대아파트 정류장에서 하차 하시면 됩니다</p>
+		<p>&nbsp;<i class="fa fa-fw fa-check"></i>&nbsp;구파발역 774 버스를 타고 고양동 현대아파트 정류장에서 하차 하시면 됩니다</p>
+		<p>&nbsp;<i class="fa fa-fw fa-check"></i>&nbsp;화정역 85 85-1 850 버스를 타고 고양동 현대아파트 정류장에서 하차 하시면 됩니다</p>
+		<p>&nbsp;<i class="fa fa-fw fa-check"></i>&nbsp;지축역 052 버스를 타고 고양동 현대아파트 정류장에서 하차 하시면 됩니다</p>
+	
+     </div>
+</div>
+<br/>
+
+     
+</body>
+<!-- Footer -->
+	<div th:replace="~{/layout/footer :: footerFragment}"></div>
+
+<!-- Script -->
+<script>
+function forSmallScreen() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+	<title>검색</title>
+</head>
+<body>
+
+<!-- Header and Navigation bar -->
+<div th:replace="~{/layout/header :: headerFragment}"></div>
+<div class="content">
+	<div class="container">
+	<br>
+	<a th:href="@{/homepage}"><i class="fa fa-fw fa-arrow-left"></i> 홈페이지 </a>
+        <br>
+        <div th:if="${post}">
+    		<h1 th:utext="${post.getTitle()}"></h1>
+    		<div th:if="not ${allowDelete}" align="right">
+            	<a th:href="@{/search/{postId}/edit(postId=${post.id})}"><i class="fa fa-fw fa-edit"></i>수정</a> |
+            	<a th:href="@{/search/{postId}/delete(postId=${post.id})}"><i class="fa fa-fw fa-trash"></i>삭제</a>
+        	</div>
+        	<div align="left">
+        		<a th:utext="${post.getAccount()}"></a>
+        		<a> | </a>
+        		<a th:utext="${#dates.format(post.getUpdatedTime(), 'dd-MMM-yyyy')}"></a>
+        		<a> | </a>
+        		<a th:utext="${post.getPostCategory().getDescription()}"></a>
+        		<a> | </a>
+        		<a> 방문자수: </a>
+        		<a th:text="${post.getViewCount()}"></a>
+        	</div>
+        <hr>
+        
+        <img th:src="@{${post.getPhotoImage()}}">
+        <br>
+        <p th:utext="${post.getContent()}"></p>
+        
+        
+    	</div>
+    	
+    	<div th:if="${errorMessage}" th:utext="${errorMessage}" class="error" /></div> 
+		
+        
+        <!-- Comments section -->
+
+            <!-- Create new comment -->
+            <div class="container">
+            <hr>
+            	<div class="row"><h3>Comments:</h3></div>
+                <form th:object="${Comment}" method="post">
+                    <textarea placeholder="Comment" name="comment"></textarea>
+                        <!--  <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->  
+                	<button class="commentButton" type="submit" onClick="window.location.reload();">Comment</button>
+                </form>
+               
+            </div>
+			<br>
+            <!-- Show comments of current post -->
+            <div class="container" align="left">
+            		<div th:if="${commentList}" th:each="com : ${commentList}">
+            			<i class="fa fa-fw fa-user-circle"></i>
+                        <a th:text="${com.getCommentedBy()}"></a>
+                        <a> | </a>
+                        <a th:text="${#dates.format(com.getCommentedTime(), 'dd-MMM-yyyy')}"></a>
+                        
+                        <div class="row">
+                        	<a>&ensp;</a>
+                            <div th:text="${com.getCommentContent()}"></div>
+                        </div>
+                        <hr>
+                    </div>
+                   </div>
+                  </div>
+                    
+ 		</div>
+
+</body>
+
+<!-- Footer -->
+	<div th:replace="~{/layout/footer :: footerFragment}"></div>
+
+<!-- Script for navigation bar -->
+<script>
+function forSmallScreen() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<!-- Script for comment box -->
+<script>
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("keyup", e =>{
+  textarea.style.height = "63px";
+  let scHeight = e.target.scrollHeight;
+  textarea.style.height = `${scHeight}px`;
+});
+
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="~{/layout/head :: headFragment}">
+   <title th:text="${#authentication.getName()}"></title>
+</head>
+
+<body>
+<!-- Header and Navigation bar -->
+<div th:replace="~{/layout/header :: headerFragment}"></div>
+
+<div class="page-content container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+			<div class="col-xl-10 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                           <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                     <img src="/image/account.png" class="img-radius responsive" alt="User-Profile-Image">
+                                </div>
+                                <h5 class="f-w-600"><a th:text="${user.getName()}"></a></h5>
+                                <a th:href="@{/accounts/edit}"><i class="fa fa-fw fa-edit"></i>수정</a>
+                           </div>
+                      </div>
+                      <div class="col-sm-8">
+                          <div class="card-block">
+                              <h6 class="m-b-20 p-b-5 b-b-default f-w-600"> 회원정보 </h6>
+                              
+                                   <div class="row">
+                                        <div class="col-sm-6">
+                                             <p class="m-b-10 f-w-600"> 아이디 </p>
+                                             <h6 class="text-muted f-w-400"><a th:text="${user.getUsername()}"></a></h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                             <p class="m-b-10 f-w-600"> 비밀번호 </p>
+                                             <h6 class="text-muted f-w-400">*******</h6>
+                                        </div>
+                                  </div>
+                                  <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+                                  <div class="row">
+                                      <div class="col-sm-6">
+                                          <p class="m-b-10 f-w-600"> 이메일 </p>
+                                             <h6 class="text-muted f-w-400"><a th:text="${user.getEmail()}"></a></h6>
+                                      </div>
+                                      <div class="col-sm-6">
+                                          <p class="m-b-10 f-w-600"> 연락처 </p>
+                                          <h6 class="text-muted f-w-400"><a th:text="${user.getContact()}"></a></h6>
+                                      </div>
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+</body>
+
+<!-- Footer -->
+	<div th:replace="~{/layout/footer :: footerFragment}"></div>
+
+<!-- Script -->
+<script>
+function forSmallScreen() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</html>

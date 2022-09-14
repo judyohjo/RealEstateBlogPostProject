@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="~{/layout/head :: headFragment}">
+   <title th:text="${add} ? 'Create a Contact' : 'Edit a Contact'" /></title>
+</head>
+
+<body>
+<div class="messageContainer">
+	<div class="newform">
+		<label onclick="history.go(-1)" for="show" class="close-btn" title="close"><i class="fa fa-fw fa-times"></i></label>
+        <br>
+        <div class="text">글수정</div>
+        <form th:action="${add} ? @{/all_board_post/add_new_post} : @{/all_board_post/{postId}/edit(postId=${post.id})}"
+              th:object="${post}" method="POST">
+			<div class="updateData" align="left">
+				<label>카테고리</label>
+                <div class="input"><a th:utext="${post.getPostCategory().getDescription()}"></a></div>
+            </div>
+            
+            <div class="data">
+				<label>제목</label>
+                <input type="text" th:field="*{title}"/>
+            </div>
+            
+            <div class="updateData" align="left">
+				<label>이미지 첨부</label>
+                <input type="file" th:field="*{photoImage}" />
+            </div>
+            
+            <div class="data">
+				<label>내용</label>
+                <textarea th:field="*{content}" class="form-control" placeholder="내용"
+                             minlength="6" maxlength="10000"></textarea>
+            </div>
+            
+            <div class="btns">
+                 <div class="innerbtn"></div>
+                 <button type="submit">수정</button>   
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+
+<!--  
+    <div class=" w3-modal text-center">
+        <form class="modal-content animate" th:action="${add} ? @{/all_board_post/add_new_post} : @{/all_board_post/{postId}/edit(postId=${post.id})}"
+              th:object="${post}" method="POST" style="max-width: 600px; margin: 0 auto;">
+              <div class="w3-container w3-padding w3-white">
+              <span onclick="history.go(-1)" class="close">&times;</span>
+              		<div>
+            			<h1> 글수정 </h1>
+        			</div>
+            <div class="m-3">
+            <div class="form-group row">
+                	<label class="col-4 col-form-label">카테고리 </label>
+                	<div class="col-8">
+                		<a th:utext="${post.getPostCategory().getDescription()}"></a>
+                	</div>
+            	</div>
+            	
+            	<div class="form-group row">
+                	<label class="col-4 col-form-label">제목 </label>
+                	<div class="col-8">
+                		<input type="text" th:field="*{title}"/>
+                	</div>
+            	</div>
+            	
+            	<div class="form-group row">
+                	<label class="col-4 col-form-label">내용 </label>
+                	<div class="col-8">
+                		<textarea th:field="*{content}" rows="4" cols="40"></textarea>
+                	</div>
+            	</div>
+            	
+            	<div class="form-group row">
+                	<label class="col-4 col-form-label">이미지 첨부 </label>
+                	<div class="col-8">
+                		<input type="file" th:field="*{photoImage}" />
+                	</div>
+            	</div>-->
+           <!--  
+                <tr th:if="${post.id}">
+                    <td>ID</td>
+                    <td>:</td>
+                    <td th:utext="${post.getId()}"></td>             
+                </tr>
+                <tr>
+                    <td> 제목 </td>
+                    <td>:</td>
+                    <td><input type="text" th:field="*{title}" /></td>              
+                </tr>
+                <tr>
+                    <td> 내용 </td>
+                    <td>:</td>
+                    <td><textarea th:field="*{content}" rows="4" cols="50"></textarea></td>
+                                 
+                </tr>
+                <tr>
+                    <td> 카테고리 </td>
+                    <td>:</td>
+                    <td th:utext="${post.getPostCategory().getDescription()}" /></td>              
+                </tr>
+               
+                <tr>
+                    <td> 이미지 첨부 </td>
+                    <td>:</td>
+                    <td><input type="file" th:field="*{photoImage}" /></td>              
+                </tr>
+                
+            </table>-->
+<!--             <br>
+            <input class="btn btn-primary" type="submit" th:value="${add} ? 'Create' : 'Update'" />
+            </div>
+            </div>
+        </form>
+        </div>
+        <br/>-->
+        <!-- Check if errorMessage is not null and not empty -->       
+        <div th:if="${errorMessage}" th:utext="${errorMessage}" class="error" /></div>   
+    </body>
+</html>

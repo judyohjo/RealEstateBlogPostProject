@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+<title> 부동산 중개수수료 </title>        
+</head>
+<body>
+
+<!-- Header and Navigation bar -->
+<div th:replace="~{/layout/header :: headerFragment}"></div>
+<div class="content">
+	<div class="container">
+	<br>
+		<div align="left">
+        	<h1> 부동산 중개수수료 </h1>
+     	</div>
+     	
+     	<br/><br/>
+     	
+        <form action="calculate.jsp" method="POST">
+        <div class="data">
+        	<label><strong>거래유형</strong></label>
+            <a><input type="radio" name="a1" id="주택" value="주택">주택</a>
+            <a><input type="radio" name="a1" id="오피스텔" value="오피스텔">오피스텔</a>
+            <a><input type="radio" name="a1" id="그 외의 부동산" value="그 외의 부동산">그 외의 부동산</a>
+        </div>
+        <br>
+        <div class="data">
+        	<label><strong>부동산 종류</strong></label>
+            <a><input type="radio" name="b1" id="매매교환" value="매매교환">매매교환</a>
+            <a><input type="radio" name="b1" id="전세" value="전세">전세</a>
+            <a><input type="radio" name="b1" id="월세" value="월세">월세</a>
+        </div>
+        <br>
+        <div class="data">
+        	<label><strong>거래금액</strong></label>
+            <input type="text" name="fee" id="fee">
+        </div>
+        <br>
+         <div class="data">
+        	<label><strong>상한요율</strong></label>
+            <input type="text" name="percentage" id="percentage">
+        </div>
+        <br>
+        <div class="data">
+        	<label><strong>중개수수료</strong></label>
+        </div>
+        <br>
+        <div class="btns">
+            <div class="innerbtn"></div>
+            <button type="submit"> 계산 </button>   
+        </div>
+     </form>  
+     <br/>
+     <img border="0" src="/image/fee1.png" alt="fee1" class="responsive">
+     <br/>
+     <img border="0" src="/image/fee2.png" alt="fee2" class="responsive">
+     <br/>
+     <img border="0" src="/image/fee3.png" alt="fee3" class="responsive">
+     <br/>
+    </div>
+</div>
+     
+</body>
+<!-- Footer -->
+	<div th:replace="~{/layout/footer :: footerFragment}"></div>
+
+<!-- Script -->
+<script>
+function forSmallScreen() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</html>

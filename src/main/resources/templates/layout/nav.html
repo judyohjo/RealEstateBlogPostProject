@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header th:fragment="navFragment">
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a th:href="@{/}" class="active">일번지 부동산</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a th:href="@{/}" class="active">일번지 부동산</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/add_new_post}"><i class="fa fa-fw fa-pencil"></i> 글쓰기 </a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/all_news_post}"><i class="fa fa-fw fa-globe"></i> 부동산 소식 </a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/all_board_post}"><i class="fa fa-fw fa-pencil-square-o"></i> 자유게시판 </a></li>
+                    <li><a th:href="@{/about_us}"><i class="fa fa-fw fa-map-marker"></i>부동산 소개 </a></li>
+                    <li><a sec:authorize="isAnonymous()" th:href="@{/login}"><i class="fa fa-fw fa-user"></i> 로그인 </a></li>
+                    <li><a sec:authorize="isAnonymous()" th:href="@{/register}"><i class="fa fa-fw fa-user-plus"></i> 회원가입 </a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/accounts}"><i class="fa fa-fw fa-user-circle"></i> 내계정 </a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="fa fa-fw fa-sign-out"></i> 로그아웃 </a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <!-- <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>-->
+                    <form class="search-field" th:action="@{/search}" method="get">
+        				<input type="text" placeholder="검색" name="keyword" />
+        				<button type="submit"><i class='bx bx-search'></i></button>     	
+    				</form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <img border="0" src="/image/home.png" alt="house" class="responsive">
+ </header>
+
+
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+</script>
+</body>
+
+</html>

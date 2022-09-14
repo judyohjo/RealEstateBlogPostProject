@@ -1,0 +1,46 @@
+<!--  <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Post List</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    </head>
+    <body>
+        <h1>Post List</h1>
+        
+        <div>
+            <nobr>
+                <a th:href="@{/news-all-post/add}">Add Post</a> |
+                <a th:href="@{/homepage}">Homepage</a>
+            </nobr>
+        </div>
+        <br/><br/>
+        <div>
+            <table border="1">
+                <tr>
+                    <th> 번호 </th>
+        			<th> 사진 </th>
+            		<th> 제목 </th>
+            		<th> 아이디 </th>
+            		<th> 날짜 </th>
+            		<th> 방문자수 </th>
+                </tr>
+                <tr th:each ="post, i : ${posts}">
+                	<td th:text="${i.count}"></td>
+                	<td><img th:src="${post.getPhotoImage()}"/></td>
+                    <td><a th:href="@{/news-all-post/{postId}(postId=${post.id})}" th:utext="${post.getTitle()}">...</a></td>
+            		<td th:text="${post.getAccount()}"></td>
+            		<td th:text="${post.getUpdatedTime()}"></td>
+            		<td th:text="${post.getViewCount()}"></td>
+                </tr>
+            </table>          
+        </div>
+        <br/><br/>
+        <div>
+            <nobr>
+                <span th:if="${hasPrev}"><a th:href="@{/news-all-post?page={prev}(prev=${prev})}">Prev</a>&nbsp;&nbsp;&nbsp;</span> 
+                <span th:if="${hasNext}"><a th:href="@{/news-all-post?page={next}(next=${next})}">Next</a></span>
+            </nobr>
+        </div>
+    </body>
+</html>-->

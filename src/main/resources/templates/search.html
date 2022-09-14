@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+	<title>검색조회</title>
+</head>
+<body>
+
+<!-- Header and Navigation bar -->
+<div th:replace="~{/layout/header :: headerFragment}"></div>
+
+<div class="content">
+	<div class="container">
+	<br>
+	<div align="left">
+        <h1><i class="fa fa-fw fa-search" style="font-size:48px;"></i> 검색조회 </h1>
+    </div>
+    <br/><br/>
+
+	<div align="left">
+	<table style="border-style: solid; border-color: black;">
+    <thead>
+    	<tr>
+        	<th> 번호 </th>
+            <th> 제목 </th>
+            <th> 내용 </th>
+            <th> 카테고리 </th>
+            <th> 날짜 </th>
+            <th> 방문자수 </th>
+        </tr>
+    </thead>
+    <tbody style="border-style: solid; border-color: black;">
+		<tr th:if="${result.empty}">
+            <td colspan="6"> 글이 없습니다. </td>
+    	</tr>
+    	<tr th:each="post, i: ${result}">
+        	<td th:text="${i.count}"></td>
+            <td><a th:href= "@{/search/{postId}(postId=${post.id})}" th:text="${post.getTitle()}"></a></td>
+            <td th:text="${post.getContent()}"></td>
+            <td th:text="${post.getPostCategory().getDescription()}"></td>
+    		<td th:text="${#dates.format(post.getUpdatedTime(), 'dd-MMM-yyyy')}"></td>
+            <td th:text="${post.getViewCount()}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+</div>
+</div>
+</div>
+</body>
+<!-- Footer -->
+	<div th:replace="~{/layout/footer :: footerFragment}"></div>
+
+<!-- Script -->
+<script>
+function forSmallScreen() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</html>

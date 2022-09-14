@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{/layout/head :: headFragment}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<title> 로그인 </title>
+</head>
+
+<body>
+	<div class="messageContainer">
+		<div class="popup">
+			<img src="/image/lock.png" class="responsive">
+         	<label onclick="history.go(-1)" for="show" class="close-btn" title="close"><i class="fa fa-fw fa-times"></i></label>
+            <div class="text">
+               로그인 
+            </div>
+            <form th:action="@{/login}" method="post">
+                <br/><div th:if="${param.error}"> 아이디 또는 비밀번호가 일치하지 않습니다.</div>
+				<br/><div th:if="${param.logout}"> 로그아웃 되었습니다.</div>
+		
+              <div class="data">
+                  <label></label>
+                  <input type="text" name="username" placeholder="아이디" required>
+               </div>
+               <div class="data">
+                  <label></label>
+                  <input type="password" name="password" placeholder="비밀번호" required>
+               </div>
+               
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit" onclick="window.href='/'"> 로그인 </button>
+               </div>
+               <div class="signup-link">
+                  회원이 아직 아니세요? <a th:href="@{/register}">회원가입</a>
+               </div>
+            </form>
+         </div>
+	</div>
+</body>
+
+</html>
