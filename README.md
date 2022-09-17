@@ -7,8 +7,8 @@
 
 ## Purpose
 
-To provide more real estate current news and enable discussions that are easily accessible to Korean citizens.
-더 많은 사람들이 최근 부동산 뉴스를 더 쉽게 접하고 그 소식들을 토론할 수 있도록 하기 위해서 개발했습니다.
+- To provide more real estate current news and enable discussions that are easily accessible to Korean citizens.
+- 더 많은 사람들이 최근 부동산 뉴스를 더 쉽게 접하고 그 소식들을 토론할 수 있도록 하기 위해서 개발했습니다.
 
 
 ## Value & Mission
