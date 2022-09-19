@@ -15,5 +15,44 @@
 
 더 많은 사람들이 빠르게 바뀌는 부동산 뉴스 및 정보에 대해 더 쉽게 접할 수 있도록 노력하겠습니다.
 
+## Features/Functionalities
 
-## Screenshots
+- 메뉴바
+    - 부동산 소개
+    - 부동산 소식
+    - 자유게시판
+    - 중개수수료 계산기
+    - 로그인
+    - 로그아웃
+    - 글쓰기
+- 계정 (= Account)
+    - Update Account (아이디 제외 변경 가능)
+    - View Account
+- 홈페이지 (= Homepage)
+    - 메뉴바
+    - 부동산이름
+    - 로그인/회원가입
+    - 검색 기능
+    - 인기 순위 (제일 많이 방문한 포스트) 리스트
+- 부동산 소개 페이지 (= About us)
+    - 부동산 소개
+    - 위치
+    - 연락처
+- 부동산 소식 페이지 (= Real estate news)
+    - Add post
+        - **Input:** Title, Category, Content, Photo
+    - View all posts
+        - Edit (수정)
+            - 카테고리는 수정을 할 수 없음
+        - Delete (삭제)
+            - 확인 메세지
+- 자유게시판 페이지 (= Discussion)
+    - List table
+    - Add discussion post
+        - All registered users
+    - View discussion post
+        - All registered users
+    - Delete discussion post
+- 중개수수료 계산기 (= Calculator)
+
+
