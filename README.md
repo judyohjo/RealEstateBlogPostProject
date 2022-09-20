@@ -4,6 +4,8 @@
 
 **부동산 뉴스 (정보), 질문응답 할 수 있는 게시판 및 중개수수료 계산기를 제공합니다.**
 
+*Note: Still in the process of adding/modifying the pages*
+
 
 ## Purpose
 
