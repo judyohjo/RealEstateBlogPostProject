@@ -19,7 +19,7 @@
 
 ## Features/Functionalities
 
-- 메뉴바
+- 메뉴바 (authorisation implemented)
     - 부동산 소개
     - 부동산 소식
     - 자유게시판
