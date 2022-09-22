@@ -65,3 +65,15 @@
 - [ ]  Divide files into folders (code cleaning)
 - [ ]  Pagination
 - [ ]  Navigation bar design
+
+## Language/Software
+
+|  | Language | Software/Tool Used |
+| --- | --- | --- |
+| Database | SQL | MySQL |
+| Backend | Java Spring framework and Maven | Eclipse 2022 |
+| Frontend | JSP and HTML/CSS (used Thymeleaf) | Eclipse 2022 |
+| ERD design | -  | draw.io |
+| Wireframe design | - | Balsamiq.cloud |
+| Framework | -  | Swing framework |
+| Check controllers | Json | Postman |
