@@ -66,7 +66,7 @@
 - [ ]  Pagination
 - [ ]  Navigation bar design
 
-## Language/Software
+## 프로그래밍 언어 및 소프트웨어
 
 |  | Language | Software/Tool Used |
 | --- | --- | --- |
