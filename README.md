@@ -61,13 +61,13 @@
 
 |  | Language | Software/Tool Used |
 | --- | --- | --- |
-| Database | SQL | MySQL |
-| Backend | Java Spring framework and Maven | Eclipse 2022 |
-| Frontend | JSP and HTML/CSS (used Thymeleaf) | Eclipse 2022 |
-| ERD design | -  | draw.io |
-| Wireframe design | - | Balsamiq.cloud |
-| Framework | -  | Swing framework |
-| Check controllers | Json | Postman |
+| **Database** | SQL | MySQL |
+| **Backend** | Java Spring framework and Maven | Eclipse 2022 |
+| **Frontend** | JSP and HTML/CSS (used Thymeleaf) | Eclipse 2022 |
+| **ERD design** | -  | draw.io |
+| **Wireframe design** | - | Balsamiq.cloud |
+| **Framework** | -  | Swing framework |
+| **Check controllers** | Json | Postman |
 
 
 ## Things to work on in the future
