@@ -57,15 +57,6 @@
     - Delete discussion post
 - 중개수수료 계산기 (= Calculator)
 
-## Things to work on in the future
-
-- [ ]  Implement CSRF tokens
-- [ ]  Photo upload
-- [ ]  중개수수료 계산기 페이지
-- [ ]  Divide files into folders (code cleaning)
-- [ ]  Pagination
-- [ ]  Navigation bar design
-
 ## 프로그래밍 언어 및 소프트웨어
 
 |  | Language | Software/Tool Used |
@@ -77,3 +68,13 @@
 | Wireframe design | - | Balsamiq.cloud |
 | Framework | -  | Swing framework |
 | Check controllers | Json | Postman |
+
+
+## Things to work on in the future
+
+- [ ]  Implement CSRF tokens
+- [ ]  Photo upload
+- [ ]  중개수수료 계산기 페이지
+- [ ]  Divide files into folders (code cleaning)
+- [ ]  Pagination
+- [ ]  Navigation bar design
