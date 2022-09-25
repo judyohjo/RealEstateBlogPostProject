@@ -20,13 +20,14 @@
 ## Features/Functionalities
 
 - 메뉴바 (Nav bar) (authorisation implemented)
-    - 부동산 소개
-    - 부동산 소식
-    - 자유게시판
-    - 중개수수료 계산기
-    - 로그인
-    - 로그아웃
-    - 글쓰기
+    - 부동산 소개 (all users)
+    - 부동산 소식 (registered users)
+    - 자유게시판 (registered users)
+    - 중개수수료 계산기 (all users)
+    - 로그인 (unregistered users)
+    - 회원가입 (unregistered users)
+    - 로그아웃 (registered users)
+    - 글쓰기 (registered users)
 - 계정 (= Account)
     - Update Account (아이디 제외 변경 가능)
     - View Account
