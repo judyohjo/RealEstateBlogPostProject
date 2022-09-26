@@ -19,7 +19,7 @@
 
 ## Features/Functionalities
 
-- 메뉴바 (Nav bar) (authorisation implemented)
+- 메뉴바 (= Navigation bar) (authorisation implemented)
     - 부동산 소개 (all users)
     - 부동산 소식 (registered users)
     - 자유게시판 (registered users)
