@@ -79,3 +79,4 @@
 - [ ]  Divide files into folders (code cleaning)
 - [ ]  Pagination
 - [ ]  Navigation bar design
+- [ ]  Professional looking design
