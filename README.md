@@ -78,5 +78,5 @@
 - [ ]  중개수수료 계산기 페이지
 - [ ]  Divide files into folders (code cleaning)
 - [ ]  Pagination
-- [ ]  Navigation bar design
+- [X]  Navigation bar design
 - [ ]  Professional looking design
