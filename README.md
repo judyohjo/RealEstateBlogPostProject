@@ -79,5 +79,6 @@
 - [ ]  Divide files into folders (code cleaning)
 - [ ]  Pagination
 - [ ]  Actual writing on posts (to see the design)
+- [ ]  Iterative UI
 - [X]  Navigation bar design
 - [X]  Professional looking design
