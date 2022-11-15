@@ -80,5 +80,6 @@
 - [ ]  Pagination
 - [ ]  Actual writing on posts (to see the design)
 - [ ]  Interactive UI
+- [ ]  REST API
 - [X]  Navigation bar design
 - [X]  Professional looking design
